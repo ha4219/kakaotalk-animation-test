@@ -1,0 +1,143 @@
+body, main {
+    margin: 0;
+    padding: 0;
+    background-color: #9bbbd4;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 320px) {
+    .container {
+        max-width:320px
+    }
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width:640px
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width:768px
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width:1024px
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width:1280px
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width:1536px
+    }
+}
+
+.chatcontainer {
+    margin: 1rem 0;
+}
+
+#chatroom {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.you > .chatbox > div > .chat {
+    background-color: #ffffff;
+}
+
+.me {
+    text-align: right;
+    direction: rtl;
+}
+
+.me > .chatbox > div > .chat {
+    background-color: #fef01b;
+    align-self: flex-end;
+}
+
+.me > img, .me > .chatbox > .name {
+    display: none;
+}
+
+.chat {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 0.3rem;
+    max-width: 80%;
+}
+
+.you > .chatbox > div >.chat::after {
+    content: "";
+    position: absolute;
+    border-top: 0px solid transparent;
+    border-right: 6px solid #ffffff;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid transparent;
+    top: 20%;
+    right: 100%;
+}
+
+.me > .chatbox > div >.chat::after {
+    content: "";
+    position: absolute;
+    border-top: 0px solid transparent;
+    border-left: 6px solid #fef01b;
+    border-bottom: 6px solid transparent;
+    border-right: 6px solid transparent;
+    top: 20%;
+    left: 100%;
+}
+
+.profile-img {
+    display: inline-block;
+    border-radius: 2rem;
+    margin-right: 0.5rem;
+    width: 3rem;
+}
+
+.chatbox {
+    display: inline-block;
+}
+
+.chattime {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #555555;
+    vertical-align: bottom;
+    padding: 0.5rem 0;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+}
+
+.active {
+    animation-name: slide-up;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(1000%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

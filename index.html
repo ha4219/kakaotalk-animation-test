@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vanilla</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <ol id="chatroom">
+            </ol>
+        </div>
+
+        <script>
+            function htmlToElement(html) {
+                const template = document.createElement('template');
+                html = html.trim(); // Never return a text node of whitespace as the result
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+            const DATA = [
+            `<li class="active">
+                <div class="chatcontainer you">
+                    <img class="profile-img" src="https://mblogthumb-phinf.pstatic.net/20150122_225/zikil337_1421903667630tY9OM_JPEG/1406712927189_1406709118496-1.jpg?type=w2"/>
+                    <div class="chatbox">
+                        <div class="name">
+                            누군가
+                        </div>
+                        <div class="chatinnercontainer">
+                            <div class="chat">
+                                ㅋㅋㅋㅋㅋㅋ
+                            </div>
+                            <div class="chattime">
+                                8:51 PM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>`,
+                `<li class="active">
+                <div class="chatcontainer you">
+                    <img class="profile-img" src="https://mblogthumb-phinf.pstatic.net/20150122_225/zikil337_1421903667630tY9OM_JPEG/1406712927189_1406709118496-1.jpg?type=w2"/>
+                    <div class="chatbox">
+                        <div class="name">
+                            누군가
+                        </div>
+                        <div class="chatinnercontainer">
+                            <div class="chat">
+                                ㅋㅋㅋㅋㅋㅋ
+                            </div>
+                            <div class="chattime">
+                                8:51 PM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>`,
+                `<li class="active">
+                <div class="chatcontainer me">
+                    <img class="profile-img" width="50" src="https://mblogthumb-phinf.pstatic.net/20150122_225/zikil337_1421903667630tY9OM_JPEG/1406712927189_1406709118496-1.jpg?type=w2"/>
+                    <div class="chatbox">
+                        <div class="name">
+                            나
+                        </div>
+                        <div class="chatinnercontainer">
+                            <div class="chat">
+                                아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd
+                            </div>
+                            <div class="chattime">
+                                8:52 PM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>`,
+            `<li class="active">
+                <div class="chatcontainer me">
+                    <img class="profile-img" width="50" src="https://mblogthumb-phinf.pstatic.net/20150122_225/zikil337_1421903667630tY9OM_JPEG/1406712927189_1406709118496-1.jpg?type=w2"/>
+                    <div class="chatbox">
+                        <div class="name">
+                            나
+                        </div>
+                        <div class="chatinnercontainer">
+                            <div class="chat">
+                                아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd 아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd 아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd
+                                아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd
+                                아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd
+                                아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd
+                            </div>
+                            <div class="chattime">
+                                8:52 PM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>`,
+            `<li class="active">
+                <div class="chatcontainer me">
+                    <img class="profile-img" width="50" src="https://mblogthumb-phinf.pstatic.net/20150122_225/zikil337_1421903667630tY9OM_JPEG/1406712927189_1406709118496-1.jpg?type=w2"/>
+                    <div class="chatbox">
+                        <div class="name">
+                            나
+                        </div>
+                        <div class="chatinnercontainer">
+                            <div class="chat">
+                                아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd 아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd 아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd
+                                아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd
+                                아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd
+                                아무말 아무말&nbsp;dfasdfsdadsafsdafsdafasd
+                            </div>
+                            <div class="chattime">
+                                8:52 PM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>` 
+            ]
+            const ol = document.getElementById('chatroom');
+            const interval = setInterval(() => {
+                const data = DATA.pop();
+                if (data) {
+                    ol.appendChild(htmlToElement(data));
+                } else {
+                    clearInterval(interval);
+                }
+            }, 1000);
+        </script>
+
+    </main>
+</body>
+</html>
