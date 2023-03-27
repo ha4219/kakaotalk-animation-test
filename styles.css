@@ -3,12 +3,14 @@ body, main {
     padding: 0;
     background-color: #9bbbd4;
     font-family: Arial, sans-serif;
+    min-height: 90vh;
 }
 
 .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    min-height: 90vh;
 }
 
 @media (min-width: 320px) {
@@ -55,6 +57,9 @@ body, main {
     list-style: none;
     margin: 0;
     padding: 0;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .you > .chatbox > div > .chat {
@@ -72,6 +77,10 @@ body, main {
 }
 
 .me > img, .me > .chatbox > .name {
+    display: none;
+}
+
+.you > img, .you > .chatbox > .name {
     display: none;
 }
 
@@ -129,15 +138,18 @@ body, main {
 
 .active {
     animation-name: slide-up;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-out;
+    animation-duration: 1s;
+    animation-timing-function: ease;
 }
 
 @keyframes slide-up {
-    from {
-        transform: translateY(1000%);
+    0% {
+        transform: scale(0);
     }
-    to {
-        transform: translateY(0);
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
     }
 }
